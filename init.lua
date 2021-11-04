@@ -1,4 +1,5 @@
 require('plugins')
+require('options')
 require('treesitter-config')
 
 -- Nord color scheme
