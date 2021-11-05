@@ -12,9 +12,16 @@ return require('packer').startup(function()
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
+  }
 
   -- Buffer line
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+  -- Nvim tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvim-tree'.setup {} end
+  }
 
 end)
