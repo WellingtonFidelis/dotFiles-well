@@ -24,4 +24,12 @@ return require('packer').startup(function()
     config = function() require'nvim-tree'.setup {} end
   }
 
+  -- Nvim TS Auto tag
+  use {'windwp/nvim-ts-autotag'}
+
+  -- Nvim TS Rainbow
+  use {'p00f/nvim-ts-rainbow'}
+
+  -- Nvim Auto Pairs
+  use {'windwp/nvim-autopairs'}
 end)
