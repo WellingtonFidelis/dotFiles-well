@@ -5,6 +5,7 @@ require('bufferline-config')
 require('keybindings')
 require('lualine-config')
 require('nvim-tree-config')
+require('telescope-config')
 require('treesitter-config')
 require('whichkey-config')
 
