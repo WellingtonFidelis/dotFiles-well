@@ -32,4 +32,7 @@ return require('packer').startup(function()
 
   -- Nvim Auto Pairs
   use {'windwp/nvim-autopairs'}
+
+  -- Nvim Which Key
+  use {'folke/which-key.nvim'}
 end)
