@@ -11,6 +11,7 @@ end
 
 -- Setup nvim-cmp
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -53,14 +54,17 @@ cmp.setup({
     end, { "i", "s" }),
   },
   sources = cmp.config.sources({
+--  sources = {
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-  }, {
     { name = 'buffer' },
-  })
+  }),
+  formating = {
+    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
+  } 
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -85,3 +89,15 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 require'lspconfig'.html.setup {
   capabilities = capabilities
 }
+
+require'lspconfig'.cssls.setup{
+  capabilities = capabilities,
+}
+
+--
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
