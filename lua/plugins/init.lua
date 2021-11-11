@@ -56,4 +56,7 @@ return require('packer').startup(function()
   -- LSP kind
   use 'onsails/lspkind-nvim'
 
+  -- Nvim-Colorize
+  use 'norcalli/nvim-colorizer.lua'
+
 end)
