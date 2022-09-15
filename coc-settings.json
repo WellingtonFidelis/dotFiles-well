@@ -8,7 +8,7 @@
 	"explorer.keyMappings.global": {
 		"<cr>": ["expandable?", "expand", "open"],
 		"v": "open:vsplit",
-		"h": "open:split",
+		"h": "open:split"
 	},
-	"explorer.git.enable": true,
+	"explorer.git.enable": true
 }
