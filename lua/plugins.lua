@@ -1,17 +1,21 @@
 -- Automatically install packer
 --
-local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = vim.fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer... Close and reopen Neovim."
-  vim.cmd [[packadd packer.nvim]]
+local ensure_packer = function()
+  local install_path = vim.fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+  if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    vim.fn.system({
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "https://github.com/wbthomason/packer.nvim",
+      install_path,
+    })
+    print "Installing packer... Close and reopen Neovim."
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
 -- Automatically reloads Neovim whenever save the plugins.lua File
@@ -40,6 +44,8 @@ packer.init {
     end
   },
 }
+
+local packer_bootstrap = ensure_packer()
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -77,7 +83,7 @@ packer.startup(function(use)
   -- Automatically set up configuration after cloning packer.nvim
   -- Put this at the end, after all plugins
   --
-  if PACKER_BOOTSTRAP then
+  if packer_boostrap then
     require("packer").sync()
   end
 

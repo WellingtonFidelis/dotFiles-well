@@ -8,15 +8,15 @@ local protocol = require('vim.lsp.protocol')
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  
+
   -- Formatting
   --
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWriterPre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  --if client.server_capabilities.documentFormattingProvider then
+  --  vim.api.nvim_command [[augroup Format]]
+  --  vim.api.nvim_command [[autocmd! * <buffer>]]
+  --  vim.api.nvim_command [[autocmd BufWriterPre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+  --  vim.api.nvim_command [[augroup END]]
+  --end
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
