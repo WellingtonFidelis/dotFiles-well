@@ -40,7 +40,30 @@ luac.out
 *.hex
 
 
-plugin/packer_compiled.lua
 java-debug/
 vscode-java-test/
-nvim.appimage
+
+# Personal files
+#
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.config/gh
+.config/coc
+.config/nvim/nvim.appimage*
+.config/nvim/plugin/packer_compiled.lua
+.gitconfig
+.landscape/
+.lesshst
+.local/
+.motd_shown
+.node_repl_history
+.npm/
+.profile
+.sudo_as_admin_successful
+.viminfo
+.wget-hsts
+.yarnrc
+Documents/
+>>>>>>> lua-config
