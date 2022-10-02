@@ -45,6 +45,7 @@ vscode-java-test/
 
 # Personal files
 #
+.aspnet/
 .bash_history
 .bash_logout
 .bashrc
@@ -53,12 +54,15 @@ vscode-java-test/
 .config/coc
 .config/nvim/nvim.appimage*
 .config/nvim/plugin/packer_compiled.lua
+.dotnet/
 .gitconfig
 .landscape/
 .lesshst
 .local/
 .motd_shown
 .node_repl_history
+.nuget/
+.templateengine/
 .npm/
 .profile
 .sudo_as_admin_successful
