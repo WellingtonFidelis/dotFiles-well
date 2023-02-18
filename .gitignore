@@ -56,6 +56,7 @@ vscode-java-test/
 .config/nvim/plugin/packer_compiled.lua
 .dotnet/
 .gitconfig
+.jupyter/
 .landscape/
 .lesshst
 .local/
@@ -71,4 +72,9 @@ vscode-java-test/
 .yarnrc
 Documents/
 Downloads/
+.ipython
+.conda
+.streamlit
+.vim
+anaconda3/
 >>>>>>> lua-config
